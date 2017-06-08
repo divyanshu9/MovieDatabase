@@ -1,0 +1,52 @@
+
+
+
+<div ng-if="!mv">
+  Loading movie results...
+</div>
+
+
+<div class="row">
+<!--<ng-repeat="data in  mv"> -->
+<div   class="well well-lg" dir-paginate="data in mv|itemsPerPage:3" >
+
+
+<img ng-src="{{ data.Poster }}" class="thumbnail animated flip movie-poster">
+
+<span class="span-outer">
+  <a href="{{ data.Website }}" target="_blank">{{ data.Title }}</a>
+</span>  ( <strong>{{data.Year}}</strong>)
+  <p><strong>Country:</strong> {{ data.country }} ({{ data.Language }})</p>
+
+  <p class="outer-p">
+    <div class="inner-p">
+      <span class="label label-primary">Director :</span> {{ data.Director }}
+    </div>
+    <div class="inner-p">
+      <span class="label label-primary">Actors :</span> {{ data.Actors }} and {{data.Actors}}
+    </div>
+    <div class="inner-p">
+      <span class="label label-primary">Genre :</span> {{ data.Genre }}
+    </div>
+
+    <div class="inner-p">
+      <span class="label label-primary">Rated :</span> Rated {{ data.Rated }}
+    </div>
+    
+  </p>
+
+  <p class="outer-p-2">
+    <strong>Content Rating :</strong> <span class="label label-success"> {{ data.Ratings[0].Value }} </span>
+  </p>
+
+
+
+</div>
+
+
+ <dir-pagination-controls   template-url="partials/dirPagination.tpl.html"></dir-pagination-controls>
+
+</div>
+<div ng-if="mv.Response==='False'">
+  No results found.
+</div>

@@ -7,30 +7,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-      
-      
-      
-    <script src="js/jquery.min.js"></script>    
-    <script type="text/javascript">
-        var dp = '';
-        window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
- 
-window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
-window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange
- 
-if (!window.indexedDB) {
-   window.alert("Your browser doesn't support a stable version of IndexedDB.")
-}
-        
-         //var db='ghuiyaan';
-         var request = window.indexedDB.open("newDatabase", 2);
-        request.onerror = function(event) {
-            console.log("error: ");
-         };
-        request.onupgradeneeded   = function(event){
-                        console.log("Upgrading");
-                        var db = event.target.result;
-                        var objectStore = db.createObjectStore("movies" , {keyPath: "id"});
 
 
 
